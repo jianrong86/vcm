@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <!-- 导航栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">SZ R&D Software Release</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Project</a></li>
+                    <li><a href="#">Software</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">{{user}}</a></li>
+                    <li><a href="#">logout</a></li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    {# side bar #}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="active">
+                        <a href="#">Overview <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Reports</a>
+                    </li>
+                    <li>
+                        <a href="#">Analytics</a>
+                    </li>
+                    <li>
+                        <a href="#">Export</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 列表-->
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h2 class="sub-header">Software Release</h2>
+                <div class="btn btn-default">
+                    <a href="/new_items/">+ADD RELEASE</a>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">ID</th>
+                                <th class="col-md-1">Project</th>
+                                <th class="col-md-1">Customer</th>
+                                <th class="col-md-1">Cust_ID</th>
+                                <th class="col-md-1">Firmware</th>
+                                <th class="col-md-1">WEBUI</th>
+                                <th class="col-md-1">Compiler</th>
+{#                                <th class="col-md-1">Software</th>#}
+            {#                    <th class="col-md-1">Path</th>#}
+            {#                    <th class="col-md-1">Modification</th>#}
+                                <th class="col-md-1">Release_Date</th>
+            {#                    <th class="col-md-1">Actual Release Date</th>#}
+            {#                    <th class="col-md-1">Release Delay Reason</th>#}
+            {#                    <th class="col-md-1">Self Test Result</th>#}
+            {#                    <th class="col-md-1">Self Test Fail Reason</th>#}
+            {#                    <th class="col-md-1">VAL_Verify</th>#}
+            {#                    <th class="col-md-1">Fail Reason</th>#}
+            {#                    <th class="col-md-1">Create_Time</th>#}
+                                <th class="col-md-1">Status</th>
+                                <th class="col-md-1">Operator</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ver in ver_lists %}
+                            <tr>
+                                <td>{{ ver.id }}</td>
+                                <td>{{ ver.project_name }}</td>
+                                <td>{{ ver.customer_name }}</td>
+                                <td>{{ ver.customer_id }}</td>
+                                <td>{{ ver.firmware_develop }}</td>
+                                <td>{{ ver.webui_develop }}</td>
+                                <td>{{ ver.compiler }}</td>
+{#                                <td>{{ ver.software_version }}</td>#}
+            {#                    <td>{{ ver.software_path }}</td>#}
+            {#                    <td>{{ ver.modification }}</td>#}
+                                <td>{{ ver.plan_release_date|date:"Y-m-d H:i:s" }}</td>
+            {#                    <td>{{ ver.actual_release_date }}</td>#}
+            {#                    <td>{{ ver.release_delay_reason }}</td>#}
+            {#                    <td>{{ ver.self_test_result }}</td>#}
+            {#                    <td>{{ ver.self_test_fail_reason }}</td>#}
+            {#                    <td>{{ ver.val_verify_result }}</td>#}
+            {#                    <td>{{ ver.val_verify_fail_reason }}</td>#}
+            {#                    <td>{{ ver.create_time }}</td>#}
+                                {% if ver.status.lower == 'open' %}
+                                    <td style="background-color: yellow">{{ ver.status }}</td>
+                                {% elif ver.status.lower == 'finish' %}
+                                    <td style="background-color: green">{{ ver.status }}</td>
+                                {% else %}
+                                    <td>{{ ver.status }}</td>
+                                {% endif %}
+                                <td><a href="/edit_items/{{ ver.id }}/"> Edit </a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
