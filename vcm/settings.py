@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vcmapp',
-    'bootstrap3',
+    # 'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'vcm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,6 +122,5 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 # 引用静态文件
-STATICFILES_DIRS = [(
-    os.path.join(BASE_DIR, 'vcn', 'static',)
-)]
+# STATICFILES_DIRS = [(os.path.join(BASE_DIR, 'vcn', 'static',))]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

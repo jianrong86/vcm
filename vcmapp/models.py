@@ -1,16 +1,17 @@
 from django.db import models
 
 # Create your models here.
-# class Users(models.Model):
-#     name = models.CharField(max_length=30)
-#     email = models.EmailField(null=True, blank=True)
-#     position = models.CharField(max_length=20, null=True, blank=True)
-#     password = models.CharField(max_length=20, null=True, blank=True)
-#
-#     def __str__(self):
-#         return self.name
+class Users(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField(null=True, blank=True)
+    position = models.CharField(max_length=20, null=True, blank=True)
+    # password = models.CharField(max_length=20, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
 class ReleaseVersion(models.Model):
+    status_choice = (('0', 'OPEN'), ('1', 'FINISH'))
     project_name = models.CharField(max_length=20)
     customer_name = models.CharField(max_length=30)
     customer_id = models.CharField(max_length=10)
@@ -27,13 +28,14 @@ class ReleaseVersion(models.Model):
     val_verify_result = models.CharField(max_length=10, null=True, blank=True)
     val_verify_fail_reason = models.TextField(null=True, blank=True)
     create_time = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=20)
+    status = models.CharField(max_length=20,choices=status_choice, default='0')
     compiler = models.EmailField(null=True, blank=True)
     verifier = models.EmailField(null=True, blank=True)
     vpm = models.EmailField(null=True, blank=True)
 
     class Meta:
-        unique_together = ("project_name", "customer_id", "software_version")
+        # unique_together = ("project_name", "customer_id", "software_version")
+        ordering = ['-id']
 
 
 
