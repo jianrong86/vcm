@@ -46,10 +46,13 @@
             <!-- 列表-->
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h2 class="sub-header">Software Release</h2>
-                <div class="btn btn-default" id="btnSwCreate">
+{#                <div class="btn btn-default" >#}
 {#                    <a href="/software_create/">+ADD</a>#}
-                    <i>+ADD</i>
-                </div>
+{#                    <i>+ADD</i>#}
+                    <button type="button" id="btnSwCreate" class="btn btn-primary ">
+                        +NEW
+                    </button>
+{#                </div>#}
 
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -98,10 +101,16 @@
             {#                    <td>{{ ver.val_verify_result }}</td>#}
             {#                    <td>{{ ver.val_verify_fail_reason }}</td>#}
             {#                    <td>{{ ver.create_time }}</td>#}
-                                {% if ver.status.lower == 'open' %}
-                                    <td style="background-color: yellow">{{ ver.status }}</td>
-                                {% elif ver.status.lower == 'finish' %}
-                                    <td style="background-color: green">{{ ver.status }}</td>
+                                {% if ver.status.lower == '0' %}
+{#                                    <td style="background-color: yellow">{{ ver.status }}</td>#}
+                                    <td>
+                                    <button class='btn btn-warning btn-xs'>OPEN</button>
+                                    </td>
+                                {% elif ver.status.lower == '1' %}
+{#                                    <td style="background-color: green">{{ ver.status }}</td>#}
+                                    <td>
+                                        <button class='btn btn-success btn-xs'>FINISH</button>
+                                    </td>
                                 {% else %}
                                     <td>{{ ver.status }}</td>
                                 {% endif %}
