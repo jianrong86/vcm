@@ -10,6 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SZ R&D Software Release</title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/dashboard.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" >
+{#    <link rel="stylesheet" href="{% static 'js/plugins/layer/skin/layer.css' %}">#}
+
+    {% block css %} {% endblock %}
 </head>
 
 <body>
@@ -23,16 +29,18 @@
 {#    <script src="{% static 'bootstrap/js/jquery-1.10.2.min.js' %}"></script>#}
     <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
     <!--<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery-1.10.2.min.js"><\/script>')</script>-->
-    <script>window.jQuery || document.write('<script src="{% static 'bootstrap/js/jquery-1.10.2.min.js' %}"><\/script>')</script>
+{#    <script>window.jQuery || document.write('<script src="{% static 'bootstrap/js/jquery-1.10.2.min.js' %}"><\/script>')</script>#}
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 {#    <script src="../../assets/js/vendor/holder.min.js"></script>#}
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 {#    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>#}
-    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'bootstrap/css/dashboard.css' %}" rel="stylesheet">
+{#    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">#}
+{#    <link href="{% static 'bootstrap/css/dashboard.css' %}" rel="stylesheet">#}
     <script src="{% static 'plugins/jQuery/jquery-2.2.3.min.js' %}"></script>
     <script src="{% static 'layer/layer.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap-datetimepicker.js' %}"></script>
+
 
 {% block javascripts %}{% endblock %}
 </body>

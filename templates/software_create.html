@@ -1,27 +1,12 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+
+{% block css %}
+
+{% endblock %}
+
 {% block content %}
 
-    <!-- 导航栏-->
-{#    <nav class="navbar navbar-inverse navbar-fixed-top">#}
-{#        <div class="container-fluid">#}
-{#            <div class="navbar-header">#}
-{#                <a class="navbar-brand" href="/index/">SZ R&D Software Release</a>#}
-{#            </div>#}
-{#            <div id="navbar" class="navbar-collapse collapse">#}
-{#                <ul class="nav navbar-nav">#}
-{#                    <li class="active"><a href="#">Project</a></li>#}
-{#                    <li><a href="#">Software</a></li>#}
-{#                </ul>#}
-{#                <ul class="nav navbar-nav navbar-right">#}
-{#                    <li><a href="#">{{user}}</a></li>#}
-{#                    <li><a href="#">logout</a></li>#}
-{#                </ul>#}
-{#                <form class="navbar-form navbar-right">#}
-{#                    <input type="text" class="form-control" placeholder="Search...">#}
-{#                </form>#}
-{#            </div>#}
-{#        </div>#}
-{#    </nav>#}
 <div class="box box-danger">
     <form class="form-horizontal" id="addForm" method="post">
         <div class="box-body">
@@ -98,21 +83,27 @@
                 <div class="form-group has-feedback">
                     <div>
                         <label class="col-sm-2 control-label">Plan&nbsp;Release&nbsp;Date:</label>
-                        <p class="datetime">Date:
-                            <input class="vDateField" id="id_plan_release_date_0" name="plan_release_date_0" size="10" type="text" value="{{ ver.plan_release_date|date:"Y-m-d" }}"/>
-                            <br />
-                            Time: <input class="vTimeField" id="id_plan_release_date_1" name="plan_release_date_1" size="8" type="text" value="{{ ver.plan_release_date|date:"H:i:s" }}"/>
-                        </p>
+{#                        <p class="datetime">Date:#}
+{#                            <input class="vDateField" id="id_plan_release_date_0" name="plan_release_date_0" size="10" type="text" value="{{ ver.plan_release_date|date:"Y-m-d" }}"/>#}
+{#                            <br />#}
+{#                            Time: <input class="vTimeField" id="id_plan_release_date_1" name="plan_release_date_1" size="8" type="text" value="{{ ver.plan_release_date|date:"H:i:s" }}"/>#}
+{#                        </p>#}
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control pull-right form_datetime" name="plan_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
+                        </div>
                     </div>
 
                     <div>
                         <label class="col-sm-2 control-label">Actual&nbsp;Release&nbsp;Date:</label>
-                        <p class="datetime">Date:
-                            <input class="vDateField" id="id_actual_release_date_0" name="actual_release_date_0" size="10" type="text" value="{{ ver.actual_release_date|date:"Y-m-d" }}"/>
-                            <br />
-                            Time:
-                            <input class="vTimeField" id="id_actual_release_date_1" name="actual_release_date_1" size="8" type="text" value="{{ ver.actual_release_date|date:"H:i:s" }}"/>
-                        </p>
+{#                        <p class="datetime">Date:#}
+{#                            <input class="vDateField" id="id_actual_release_date_0" name="actual_release_date_0" size="10" type="text" value="{{ ver.actual_release_date|date:"Y-m-d" }}"/>#}
+{#                            <br />#}
+{#                            Time:#}
+{#                            <input class="vTimeField" id="id_actual_release_date_1" name="actual_release_date_1" size="8" type="text" value="{{ ver.actual_release_date|date:"H:i:s" }}"/>#}
+{#                        </p>#}
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control pull-right form_datetime" name="actual_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
+                        </div>
                     </div>
                 </div>
 
@@ -154,7 +145,7 @@
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label" for="id_status">Status:</label>
                     <div class="col-sm-3">
-                        <select name="status" id="id_status">
+                        <select class="form-control" style="width:100%;" name="status" id="id_status">
                             <option value=0>OPEN</option>
                             <option value=1>FINISH</option>
                         </select>
@@ -200,6 +191,21 @@
             }
 
         });
+    });
+
+    $(".form_datetime").datetimepicker({
+            language:  'zh',
+{#            minView: 'month', //选择范围知道日期，不选择时分#}
+            //weekStart: 1,
+            //todayBtn:  1,
+            autoclose: 1,
+            todayHighlight: 1,
+            //startView: 2,
+            forceParse: 0,
+            showMeridian: 1,
+{#            format: 'yyyy-mm-dd'#}
+        }).on('changeDate', function (ev) {
+            $(this).datetimepicker('hide');
     });
     </script>
 {% endblock %}

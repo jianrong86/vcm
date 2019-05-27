@@ -67,7 +67,8 @@ class SoftwareCreate(View):
                 verifier=request.POST.get('verifier'),
                 vpm=request.POST.get('vpm')
             )
-            print("project_name:" + project_name)
+            print("plan_release_date:" + request.POST.get('plan_release_date'))
+            print("actual_release_date:" + request.POST.get('actual_release_date'))
             # print("submit_items")
             # ver_list = ReleaseVersion.objects.all()
 
