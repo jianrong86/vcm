@@ -12,6 +12,7 @@ class Users(models.Model):
 
 class ReleaseVersion(models.Model):
     status_choice = (('0', 'OPEN'), ('1', 'FINISH'))
+    weekly = models.IntegerField(null=True, blank=True)
     project_name = models.CharField(max_length=20)
     customer_name = models.CharField(max_length=30)
     customer_id = models.CharField(max_length=10)
@@ -36,8 +37,6 @@ class ReleaseVersion(models.Model):
     class Meta:
         # unique_together = ("project_name", "customer_id", "software_version")
         ordering = ['-id']
-
-
 
     def __str__(self):
         return self.software_version
