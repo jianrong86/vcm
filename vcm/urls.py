@@ -24,7 +24,8 @@ urlpatterns = [
     url(r'^$', views.SoftwareView.as_view(), name='software-view'),
     # url(r'^new_items/', views.new_items),
     # url(r'^new_items_submit/', views.submit_items),
-    url(r'^software_create/', views.SoftwareCreate.as_view(), name="software-create"),
+    url(r'^software_create', views.SoftwareCreate.as_view(), name="software-create"),
+    url(r'^software_update', views.SoftwareUpdate.as_view(), name="software-update"),
     url(r'^edit_items/(?P<id>[0-9]+)/$', views.edit_items),
     url(r'^edit_items_save/(?P<id>[0-9]+)/$', views.update_items),
 

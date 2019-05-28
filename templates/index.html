@@ -114,7 +114,12 @@
                                 {% else %}
                                     <td>{{ ver.status }}</td>
                                 {% endif %}
-                                <td><a href="/edit_items/{{ ver.id }}/"> Edit </a></td>
+                                <td>
+{#                                    <a href="/edit_items/{{ ver.id }}/"> Edit </a>#}
+                                    <button title='编辑' onclick='doUpdate("{{ ver.id }}")'>
+                                        <i class='glyphicon glyphicon-list-alt'></i>
+                                    </button>
+                                </td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -143,6 +148,21 @@ $("#btnSwCreate").click( function () {
     });
     layer.full(div)
 });
+
+    function doUpdate(id) {
+        var div=layer.open({
+            type: 2,
+            title: 'edit',
+            shadeClose: false,
+            maxmin: true,
+            area: ['800px', '600px'],
+            content: ["{% url 'software-update' %}" + '?id=' + id],
+            end: function () {
+                window.location.reload();
+            }
+        });
+        layer.full(div)
+    }
 </script>
 {% endblock %}
 

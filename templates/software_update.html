@@ -9,74 +9,76 @@
 
 <div class="box box-danger">
     <form class="form-horizontal" id="addForm" method="post">
+        <input type="hidden" name='sw_id' value="{{ ver.id }}"/>
+{#        <input type="hidden" name='sw_id' value="{{ ver.id }}"/>#}
         <div class="box-body">
             <fieldset>
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label" for="id_project_name">Project&nbsp;name:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_project_name" maxlength="20" name="project_name" type="text" required />
+                        <input class="form-control" id="id_project_name" maxlength="20" name="project_name" type="text" value="{{ ver.project_name }}" required />
                     </div>
 
                     <label class="col-sm-2 control-label" for="id_customer_name">Customer&nbsp;name:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_customer_name" maxlength="20" name="customer_name" type="text" required />
+                        <input class="form-control" id="id_customer_name" maxlength="20" name="customer_name" type="text" value="{{ ver.customer_name }}" required />
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label" for="id_customer_id">Customer&nbsp;id:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_customer_id" maxlength="10" name="customer_id" type="text" required />
+                        <input class="form-control" id="id_customer_id" maxlength="10" name="customer_id" type="text" value="{{ ver.customer_id }}" required />
                     </div>
 
                     <label class="col-sm-2 control-label">Firmware&nbsp;develop:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_firmware_develop" maxlength="254" name="firmware_develop" type="email" />
+                        <input class="form-control" id="id_firmware_develop" maxlength="254" name="firmware_develop" type="email" value="{{ ver.firmware_develop }}" />
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Webui&nbsp;develop:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_webui_develop" maxlength="254" name="webui_develop" type="email" />
+                        <input class="form-control" id="id_webui_develop" maxlength="254" name="webui_develop" type="email" value="{{ ver.webui_develop }}"/>
                     </div>
 
                     <label class="col-sm-2 control-label">Compiler:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_compiler" maxlength="254" name="compiler" type="email" />
+                        <input class="form-control" id="id_compiler" maxlength="254" name="compiler" type="email" value="{{ ver.compiler }}"/>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Verifier:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_verifier" maxlength="254" name="verifier" type="email" />
+                        <input class="form-control" id="id_verifier" maxlength="254" name="verifier" type="email" value="{{ ver.verifier }}"/>
                     </div>
 
                     <label class="col-sm-2 control-label">VPM:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_vpm" maxlength="254" name="vpm" type="email" />
+                        <input class="form-control" id="id_vpm" maxlength="254" name="vpm" type="email" value="{{ ver.vpm }}"/>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Software&nbsp;version:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_software_version" maxlength="256" name="software_version" type="text" />
+                        <input class="form-control" id="id_software_version" maxlength="256" name="software_version" type="text" value="{{ ver.software_version }}"/>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Software&nbsp;path:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" cols="40" id="id_software_path" name="software_path" rows="10"></textarea>
+                        <textarea class="form-control" cols="40" id="id_software_path" name="software_path" rows="10">{{ ver.software_path }}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Modification:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" cols="40" id="id_modification" name="modification" rows="10"></textarea>
+                        <textarea class="form-control" cols="40" id="id_modification" name="modification" rows="10">{{ ver.modification }}</textarea>
                     </div>
                 </div>
 
@@ -110,35 +112,35 @@
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Release&nbsp;delay&nbsp;reason:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" cols="40" id="id_release_delay_reason" name="release_delay_reason" rows="10"></textarea>
+                        <textarea class="form-control" cols="40" id="id_release_delay_reason" name="release_delay_reason" rows="10">{{ ver.release_delay_reason }}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;result:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" />
+                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" value="{{ ver.self_test_result }}" />
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;fail&nbsp;reason:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" cols="40" id="id_self_test_fail_reason" name="self_test_fail_reason" rows="10"></textarea>
+                        <textarea class="form-control" cols="40" id="id_self_test_fail_reason" name="self_test_fail_reason" rows="10">{{ ver.self_test_fail_reason }}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;result:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" />
+                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" value="{{ ver.val_verify_result }}"/>
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;fail&nbsp;reason:</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control" cols="40" id="id_val_verify_fail_reason" name="val_verify_fail_reason" rows="10"></textarea>
+                        <textarea class="form-control" cols="40" id="id_val_verify_fail_reason" name="val_verify_fail_reason" rows="10">{{ ver.val_verify_fail_reason }}</textarea>
                     </div>
                 </div>
 
@@ -170,7 +172,7 @@
         var data = $("#addForm").serialize();
         $.ajax({
             type : $("#addForm").attr('method'),
-            url : "{% url 'software-create' %}",
+            url : "{% url 'software-update' %}",
             data : data,
             cache : false,
             success : function(msg) {
@@ -198,6 +200,7 @@
 	    window.location.reload();
 
     })
+
     $(".form_datetime").datetimepicker({
             language:  'zh',
 {#            minView: 'month', //选择范围知道日期，不选择时分#}

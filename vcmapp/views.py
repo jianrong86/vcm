@@ -42,8 +42,8 @@ class SoftwareCreate(View):
     def post(self,request):
         ret = dict()
         if request.is_ajax():
-            print("aaaaaaaaaaaa")
-            project_name = request.POST.get('project_name')
+            # print("aaaaaaaaaaaa")
+            # project_name = request.POST.get('project_name')
 
             ReleaseVersion.objects.create(
                 project_name=request.POST.get('project_name'),
@@ -86,13 +86,52 @@ class SoftwareCreate(View):
 #     ver_list = ReleaseVersion.objects.all()
 #     return render(request, "index.html", {"ver_lists": ver_list})
 
+class SoftwareUpdate(View):
+    def get(self, request):
+        ver = ReleaseVersion.objects.get(id=request.GET['id'])
+        return render(request, "software_update.html", {"ver": ver})
+
+    def post(self, request):
+        res = dict()
+        ver = ReleaseVersion.objects.get(id=request.POST.get('sw_id'))
+
+        if not ver:
+            res['status'] = 'fail'
+
+        try:
+            ver.project_name = request.POST.get('project_name')
+            ver.customer_name = request.POST.get('customer_name')
+            ver.customer_id = request.POST.get('customer_id')
+            ver.firmware_develop = request.POST.get('firmware_develop')
+            ver.webui_develop = request.POST.get('webui_develop')
+            ver.software_version = request.POST.get('software_version')
+            ver.software_path = request.POST.get('software_path')
+            ver.modification = request.POST.get('modification')
+            ver.plan_release_date = request.POST.get('plan_release_date')
+            ver.actual_release_date = request.POST.get('actual_release_date')
+            ver.release_delay_reason = request.POST.get('release_delay_reason')
+            ver.self_test_result = request.POST.get('self_test_result')
+            ver.self_test_fail_reason = request.POST.get('self_test_fail_reason')
+            ver.val_verify_result = request.POST.get('val_verify_result')
+            ver.val_verify_fail_reason = request.POST.get('val_verify_fail_reason')
+            ver.create_time = request.POST.get('create_time')
+            ver.status = request.POST.get('status')
+            print("ver.status: %s" % ver.status)
+            ver.save()
+        except BaseException as e:
+            res['status'] = 'fail'
+        res['status'] = 'success'
+        return HttpResponse(json.dumps(res), content_type='application/json')
+
+
+
 def new_items(request):
     # ver_list = ReleaseVersion.objects.all()
     return render(request, "new_items.html")
 
 def edit_items(request, id):
     ver = ReleaseVersion.objects.get(id=id)
-    return render(request, "edit_items.html", {"ver": ver})
+    return render(request, "software_update.html", {"ver": ver})
 
 def update_items(request, id):
     ver = ReleaseVersion.objects.get(id=id)
@@ -128,7 +167,7 @@ def update_items(request, id):
     except BaseException as e:
         render(request, "404.html")
 
-    return render(request, "edit_items.html", {"ver": ver})
+    return render(request, "software_update.html", {"ver": ver})
 
 
 def submit_items(request):
