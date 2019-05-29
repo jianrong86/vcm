@@ -116,8 +116,14 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;result:</label>
-                    <div class="col-sm-3">
-                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" />
+{#                    <div class="col-sm-3">#}
+{#                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" />#}
+{#                    </div>#}
+                     <div class="col-sm-3">
+                        <select class="form-control" style="width:100%;" name="self_test_result" id="id_self_test_result">
+                            <option value=0>PASS</option>
+                            <option value=1>FAIL</option>
+                        </select>
                     </div>
                 </div>
 
@@ -130,8 +136,14 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;result:</label>
+{#                    <div class="col-sm-3">#}
+{#                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" />#}
+{#                    </div>#}
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" />
+                        <select class="form-control" style="width:100%;" name="val_verify_result" id="id_val_verify_result" type="text" >
+                            <option value=0>PASS</option>
+                            <option value=1>FAIL</option>
+                        </select>
                     </div>
                 </div>
 

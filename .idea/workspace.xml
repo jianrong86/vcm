@@ -3,12 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="68c17d1a-e68e-4467-9e58-af0ad66f8fb2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcm.iml" afterPath="$PROJECT_DIR$/.idea/vcm.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.bat" afterPath="$PROJECT_DIR$/start.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/software_create.html" afterPath="$PROJECT_DIR$/templates/software_create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcm/urls.py" afterPath="$PROJECT_DIR$/vcm/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/software_update.html" afterPath="$PROJECT_DIR$/templates/software_update.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcmapp/models.py" afterPath="$PROJECT_DIR$/vcmapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcmapp/views.py" afterPath="$PROJECT_DIR$/vcmapp/views.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/edit_items.html" afterPath="$PROJECT_DIR$/templates/software_update.html" />
     </list>
     <ignored path="vcm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +41,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="158" column="59" selection-start-line="158" selection-start-column="55" selection-end-line="158" selection-end-column="59" />
+            <state relative-caret-position="583">
+              <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -49,32 +51,43 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vcm/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
+            <state relative-caret-position="625">
               <caret line="27" column="57" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vcmapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="software_update.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="software_update.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/software_update.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="197" column="4" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+            <state relative-caret-position="344">
+              <caret line="171" column="66" selection-start-line="171" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
               <folding>
-                <element signature="e#8659#8678#0#HTML" expanded="true" />
+                <element signature="e#524#530#0#HTML" expanded="true" />
+                <element signature="e#867#873#0#HTML" expanded="true" />
+                <element signature="e#1288#1294#0#HTML" expanded="true" />
+                <element signature="e#1603#1609#0#HTML" expanded="true" />
+                <element signature="e#2005#2011#0#HTML" expanded="true" />
+                <element signature="e#3327#3333#0#HTML" expanded="true" />
+                <element signature="e#3730#3736#0#HTML" expanded="true" />
+                <element signature="e#7230#7249#0#HTML" expanded="true" />
+                <element signature="e#8335#8341#0#HTML" expanded="true" />
+                <element signature="e#8347#8353#0#HTML" expanded="true" />
+                <element signature="e#8715#8734#0#HTML" expanded="true" />
+                <element signature="e#9393#9399#0#HTML" expanded="true" />
+                <element signature="e#9405#9411#0#HTML" expanded="true" />
+                <element signature="e#9415#9421#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,9 +96,12 @@
       <file leaf-file-name="software_create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/software_create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="195" column="4" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="387">
+              <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="146" selection-end-column="26" />
+              <folding>
+                <element signature="e#6721#6740#0#HTML" expanded="true" />
+                <element signature="e#7850#7869#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +109,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vcmapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="34" column="7" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="492">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -130,7 +146,6 @@
         <option value="$PROJECT_DIR$/vcmapp/urls.py" />
         <option value="$PROJECT_DIR$/vcmapp/demo1.py" />
         <option value="$PROJECT_DIR$/vcmapp/templates/additems.html" />
-        <option value="$PROJECT_DIR$/vcmapp/models.py" />
         <option value="$PROJECT_DIR$/vcmapp/templates/base.html" />
         <option value="$PROJECT_DIR$/vcmapp/templates/404.html" />
         <option value="$PROJECT_DIR$/vcm/settings.py" />
@@ -140,9 +155,10 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/vcm/urls.py" />
-        <option value="$PROJECT_DIR$/vcmapp/views.py" />
+        <option value="$PROJECT_DIR$/vcmapp/models.py" />
         <option value="$PROJECT_DIR$/templates/software_create.html" />
         <option value="$PROJECT_DIR$/templates/software_update.html" />
+        <option value="$PROJECT_DIR$/vcmapp/views.py" />
       </list>
     </option>
   </component>
@@ -153,10 +169,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="54" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1554" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -183,7 +199,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -279,12 +294,13 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/gistandard" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -612,14 +628,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1189857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -631,6 +646,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -686,9 +702,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -729,9 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -800,14 +812,7 @@
     <entry file="file://$PROJECT_DIR$/vcmapp/templates/new_items.html" />
     <entry file="file://$PROJECT_DIR$/vcmapp/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/vcmapp/templates/edit_items.html" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/contrib/staticfiles/templatetags/staticfiles.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/django/contrib/staticfiles/templatetags/staticfiles.py" />
     <entry file="file://$PROJECT_DIR$/static/bootstrap/css/bootstrap-datetimepicker.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -831,7 +836,6 @@
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,21 +843,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="158" column="59" selection-start-line="158" selection-start-column="55" selection-end-line="158" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vcm/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
+        <state relative-caret-position="625">
           <caret line="27" column="57" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="57" />
           <folding />
         </state>
@@ -861,37 +856,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vcmapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="7" />
+        <state relative-caret-position="492">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vcmapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="98" column="34" selection-start-line="98" selection-start-column="34" selection-end-line="98" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/software_create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="195" column="4" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
+        <state relative-caret-position="387">
+          <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="146" selection-end-column="26" />
+          <folding>
+            <element signature="e#6721#6740#0#HTML" expanded="true" />
+            <element signature="e#7850#7869#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/software_update.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="197" column="4" selection-start-line="197" selection-start-column="4" selection-end-line="197" selection-end-column="4" />
+        <state relative-caret-position="344">
+          <caret line="171" column="66" selection-start-line="171" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
-            <element signature="e#8659#8678#0#HTML" expanded="true" />
+            <element signature="e#524#530#0#HTML" expanded="true" />
+            <element signature="e#867#873#0#HTML" expanded="true" />
+            <element signature="e#1288#1294#0#HTML" expanded="true" />
+            <element signature="e#1603#1609#0#HTML" expanded="true" />
+            <element signature="e#2005#2011#0#HTML" expanded="true" />
+            <element signature="e#3327#3333#0#HTML" expanded="true" />
+            <element signature="e#3730#3736#0#HTML" expanded="true" />
+            <element signature="e#7230#7249#0#HTML" expanded="true" />
+            <element signature="e#8335#8341#0#HTML" expanded="true" />
+            <element signature="e#8347#8353#0#HTML" expanded="true" />
+            <element signature="e#8715#8734#0#HTML" expanded="true" />
+            <element signature="e#9393#9399#0#HTML" expanded="true" />
+            <element signature="e#9405#9411#0#HTML" expanded="true" />
+            <element signature="e#9415#9421#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vcmapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

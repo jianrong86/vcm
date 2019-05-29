@@ -42,8 +42,14 @@ class SoftwareCreate(View):
     def post(self,request):
         ret = dict()
         if request.is_ajax():
-            # print("aaaaaaaaaaaa")
-            # project_name = request.POST.get('project_name')
+            print("aaaaaaaaaaaa")
+            plan_date = request.POST.get('plan_release_date')
+            if not plan_date:
+                plan_date = None
+
+            actual_date = request.POST.get('actual_release_date')
+            if not actual_date:
+                actual_date = None
 
             ReleaseVersion.objects.create(
                 project_name=request.POST.get('project_name'),
@@ -54,8 +60,8 @@ class SoftwareCreate(View):
                 software_version=request.POST.get('software_version'),
                 software_path=request.POST.get('software_path'),
                 modification=request.POST.get('modification'),
-                plan_release_date=request.POST.get('plan_release_date'),
-                actual_release_date=request.POST.get('actual_release_date'),
+                plan_release_date=plan_date,
+                actual_release_date=actual_date,
                 release_delay_reason=request.POST.get('release_delay_reason'),
                 self_test_result=request.POST.get('self_test_result'),
                 self_test_fail_reason=request.POST.get('self_test_fail_reason'),
@@ -67,15 +73,7 @@ class SoftwareCreate(View):
                 verifier=request.POST.get('verifier'),
                 vpm=request.POST.get('vpm')
             )
-            print("plan_release_date:" + request.POST.get('plan_release_date'))
-            print("actual_release_date:" + request.POST.get('actual_release_date'))
-            # print("submit_items")
-            # ver_list = ReleaseVersion.objects.all()
-
-            # ret['ver_lists'] = ver_list
             ret['status'] = "success"
-            # print("ret:%s" % ret)
-            # return JsonResponse(ret)
         else:
             ret['status'] = "fail"
         print(ret)
@@ -122,7 +120,6 @@ class SoftwareUpdate(View):
             res['status'] = 'fail'
         res['status'] = 'success'
         return HttpResponse(json.dumps(res), content_type='application/json')
-
 
 
 def new_items(request):

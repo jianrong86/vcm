@@ -12,6 +12,7 @@ class Users(models.Model):
 
 class ReleaseVersion(models.Model):
     status_choice = (('0', 'OPEN'), ('1', 'FINISH'))
+    result_choice = (('0', 'PASS'), ('1', 'FAIL'))
     weekly = models.IntegerField(null=True, blank=True)
     project_name = models.CharField(max_length=20)
     customer_name = models.CharField(max_length=30)
@@ -24,9 +25,9 @@ class ReleaseVersion(models.Model):
     plan_release_date = models.DateTimeField('Plan Release Date', null=True, blank=True)
     actual_release_date = models.DateTimeField('Actual Release Date', null=True, blank=True)
     release_delay_reason = models.TextField(null=True, blank=True)
-    self_test_result = models.CharField(max_length=10, null=True, blank=True)
+    self_test_result = models.CharField(max_length=10, choices=result_choice,null=True, blank=True)
     self_test_fail_reason = models.TextField(null=True, blank=True)
-    val_verify_result = models.CharField(max_length=10, null=True, blank=True)
+    val_verify_result = models.CharField(max_length=10, choices=result_choice,null=True, blank=True)
     val_verify_fail_reason = models.TextField(null=True, blank=True)
     create_time = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=20,choices=status_choice, default='0')

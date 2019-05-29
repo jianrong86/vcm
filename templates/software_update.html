@@ -118,8 +118,19 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;result:</label>
+{#                    <div class="col-sm-3">#}
+{#                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" value="{{ ver.self_test_result }}" />#}
+{#                    </div>#}
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" value="{{ ver.self_test_result }}" />
+                        <select class="form-control" style="width:100%;" name="self_test_result" id="id_self_test_result" type="text" >
+                            {% if ver.val_verify_result == "0" %}
+                                <option value=0>PASS</option>
+                                <option value=1>FAIL</option>
+                            {% else %}
+                                <option value=1>FAIL</option>
+                                <option value=0>PASS</option>
+                            {% endif %}
+                        </select>
                     </div>
                 </div>
 
@@ -132,8 +143,19 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;result:</label>
+{#                    <div class="col-sm-3">#}
+{#                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" value="{{ ver.val_verify_result }}"/>#}
+{#                    </div>#}
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" value="{{ ver.val_verify_result }}"/>
+                        <select class="form-control" style="width:100%;" name="val_verify_result" id="id_val_verify_result" type="text" >
+                            {% if ver.val_verify_result == "0" %}
+                                <option value=0>PASS</option>
+                                <option value=1>FAIL</option>
+                            {% else %}
+                                <option value=1>FAIL</option>
+                                <option value=0>PASS</option>
+                            {% endif %}
+                        </select>
                     </div>
                 </div>
 
@@ -148,8 +170,15 @@
                     <label class="col-sm-2 control-label" for="id_status">Status:</label>
                     <div class="col-sm-3">
                         <select class="form-control" style="width:100%;" name="status" id="id_status">
-                            <option value=0>OPEN</option>
-                            <option value=1>FINISH</option>
+                            {% if ver.status == "0" %}
+                                <option value=0>OPEN</option>
+                                <option value=1>FINISH</option>
+                            {% else %}
+                                <option value=1>FINISH</option>
+                                <option value=0>OPEN</option>
+                            {% endif %}
+{#                            <option value=0>OPEN</option>#}
+{#                            <option value=1>FINISH</option>#}
                         </select>
                     </div>
                 </div>
