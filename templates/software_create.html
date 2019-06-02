@@ -2,7 +2,9 @@
 {% load staticfiles %}
 
 {% block css %}
-
+{#    <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.15/media/css/jquery.dataTables.css' %}">#}
+    <link rel="stylesheet" href="{% static 'plugins/select2/select2.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'plugins/datatables/jquery.dataTables.min.css' %}">#}
 {% endblock %}
 
 {% block content %}
@@ -12,23 +14,70 @@
         <div class="box-body">
             <fieldset>
                 <div class="form-group has-feedback">
-                    <label class="col-sm-2 control-label" for="id_project_name">Project&nbsp;name:</label>
+                    <label class="col-sm-2 control-label">Weekly:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_project_name" maxlength="20" name="project_name" type="text" required />
+                        <input class="form-control" maxlength="20" name="weekly" type="text" />
                     </div>
 
-                    <label class="col-sm-2 control-label" for="id_customer_name">Customer&nbsp;name:</label>
+                   <label class="col-sm-2 control-label" for="id_project_name">Project&nbsp;name:</label>
                     <div class="col-sm-3">
-                        <input class="form-control" id="id_customer_name" maxlength="20" name="customer_name" type="text" required />
+                        <input class="form-control" id="id_project_name" maxlength="20" name="project_name" type="text" required />
                     </div>
                 </div>
 
                 <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label" for="id_customer_name">Customer&nbsp;name:</label>
+                    <div class="col-sm-3">
+                        <input class="form-control" id="id_customer_name" maxlength="20" name="customer_name" type="text" required />
+                    </div>
+
                     <label class="col-sm-2 control-label" for="id_customer_id">Customer&nbsp;id:</label>
                     <div class="col-sm-3">
                         <input class="form-control" id="id_customer_id" maxlength="10" name="customer_id" type="text" required />
                     </div>
+                </div>
 
+                <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label">Build&nbsp;Type:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control col-sm-3" id="selectBuildType" style="width:100%;" name="build_type">
+                            <option></option>
+                            {% for build_type in build_type_list %}
+                            <option value={{ build_type.item }}>{{ build_type.value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback" id="rebuildBlock">
+                    <label class="col-sm-2 control-label">Rebuild&nbsp;reason:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" cols="40" name="rebuild_reason" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <label class="col-sm-2 control-label">Release&nbsp;Type:</label>
+                    <div class="col-sm-3">
+                        <select class="form-control col-sm-3" id="selectReleaseType" style="width:100%;" name="release_type">
+                            <option></option>
+                            {% for release_type in release_type_list %}
+                            <option value={{ release_type.item }}>{{ release_type.value }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group has-feedback" id="reReleaseBlock">
+                    <label class="col-sm-2 control-label">Re-release&nbsp;reason:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" cols="40" name="re_release_reason" rows="10"></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Firmware&nbsp;develop:</label>
                     <div class="col-sm-3">
                         <input class="form-control" id="id_firmware_develop" maxlength="254" name="firmware_develop" type="email" />
@@ -60,7 +109,7 @@
                 </div>
 
                 <div class="form-group has-feedback">
-                    <label class="col-sm-2 control-label">Software&nbsp;version:</label>
+                    <label class="col-sm-2 control-label">Software&nbsp;name:</label>
                     <div class="col-sm-3">
                         <input class="form-control" id="id_software_version" maxlength="256" name="software_version" type="text" />
                     </div>
@@ -83,11 +132,6 @@
                 <div class="form-group has-feedback">
                     <div>
                         <label class="col-sm-2 control-label">Plan&nbsp;Release&nbsp;Date:</label>
-{#                        <p class="datetime">Date:#}
-{#                            <input class="vDateField" id="id_plan_release_date_0" name="plan_release_date_0" size="10" type="text" value="{{ ver.plan_release_date|date:"Y-m-d" }}"/>#}
-{#                            <br />#}
-{#                            Time: <input class="vTimeField" id="id_plan_release_date_1" name="plan_release_date_1" size="8" type="text" value="{{ ver.plan_release_date|date:"H:i:s" }}"/>#}
-{#                        </p>#}
                         <div class="col-sm-3">
                             <input type="text" class="form-control pull-right form_datetime" name="plan_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
                         </div>
@@ -95,12 +139,6 @@
 
                     <div>
                         <label class="col-sm-2 control-label">Actual&nbsp;Release&nbsp;Date:</label>
-{#                        <p class="datetime">Date:#}
-{#                            <input class="vDateField" id="id_actual_release_date_0" name="actual_release_date_0" size="10" type="text" value="{{ ver.actual_release_date|date:"Y-m-d" }}"/>#}
-{#                            <br />#}
-{#                            Time:#}
-{#                            <input class="vTimeField" id="id_actual_release_date_1" name="actual_release_date_1" size="8" type="text" value="{{ ver.actual_release_date|date:"H:i:s" }}"/>#}
-{#                        </p>#}
                         <div class="col-sm-3">
                             <input type="text" class="form-control pull-right form_datetime" name="actual_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
                         </div>
@@ -116,18 +154,16 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;result:</label>
-{#                    <div class="col-sm-3">#}
-{#                        <input class="form-control" id="id_self_test_result" maxlength="10" name="self_test_result" type="text" />#}
-{#                    </div>#}
                      <div class="col-sm-3">
-                        <select class="form-control" style="width:100%;" name="self_test_result" id="id_self_test_result">
+                        <select class="form-control" id="selectSelfTest" style="width:100%;" name="self_test_result">
+                            <option></option>
                             <option value=0>PASS</option>
                             <option value=1>FAIL</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group has-feedback">
+                <div class="form-group has-feedback" id="selfTestReasonBlock">
                     <label class="col-sm-2 control-label">Self&nbsp;test&nbsp;fail&nbsp;reason:</label>
                     <div class="col-sm-8">
                         <textarea class="form-control" cols="40" id="id_self_test_fail_reason" name="self_test_fail_reason" rows="10"></textarea>
@@ -136,18 +172,16 @@
 
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;result:</label>
-{#                    <div class="col-sm-3">#}
-{#                        <input class="form-control" id="id_val_verify_result" maxlength="10" name="val_verify_result" type="text" />#}
-{#                    </div>#}
                     <div class="col-sm-3">
-                        <select class="form-control" style="width:100%;" name="val_verify_result" id="id_val_verify_result" type="text" >
+                        <select class="form-control inputText" style="width:100%;" name="val_verify_result" id="selectValVerifyResult" type="text" >
+                            <option></option>
                             <option value=0>PASS</option>
                             <option value=1>FAIL</option>
                         </select>
                     </div>
                 </div>
 
-                <div class="form-group has-feedback">
+                <div class="form-group has-feedback" id="valVerifyResultBlock">
                     <label class="col-sm-2 control-label">Val&nbsp;verify&nbsp;fail&nbsp;reason:</label>
                     <div class="col-sm-8">
                         <textarea class="form-control" cols="40" id="id_val_verify_fail_reason" name="val_verify_fail_reason" rows="10"></textarea>
@@ -157,7 +191,8 @@
                 <div class="form-group has-feedback">
                     <label class="col-sm-2 control-label" for="id_status">Status:</label>
                     <div class="col-sm-3">
-                        <select class="form-control" style="width:100%;" name="status" id="id_status">
+                        <select class="form-control inputText" style="width:100%;" name="status" id="id_status">
+                            <option></option>
                             <option value=0>OPEN</option>
                             <option value=1>FINISH</option>
                         </select>
@@ -168,7 +203,7 @@
         <div class="box-footer">
             <div class="row span7 text-center">
                 <button type="button" id="btnSave" class="btn btn-success margin-right">Save</button>
-                <button type="button" id="btnCancel" class="btn btn-success margin-right">重置</button>
+                <button type="button" id="btnCancel" class="btn btn-success margin-right">Cancel</button>
             </div>
         </div>
     </form>
@@ -177,6 +212,7 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script src="{% static 'plugins/select2/select2.full.min.js' %}"></script>
     <script type="text/javascript">
     $("#btnSave").click(function () {
         var data = $("#addForm").serialize();
@@ -190,8 +226,8 @@
                     layer.alert('success！', {icon: 1},function(index){
 					    parent.layer.closeAll(); //关闭所有弹窗
                     });
-                }else if (msg.status == 'fail') {
-                    layer.alert('fail！', {icon: 1},function(index){
+                }else{
+                    layer.alert('fail！\n' + msg.status, {icon: 1},function(index){
 					    parent.layer.closeAll(); //关闭所有弹窗
                     });
                 }
@@ -224,5 +260,53 @@
         }).on('changeDate', function (ev) {
             $(this).datetimepicker('hide');
     });
+
+    $("#selectBuildType").change(function () {
+{#        console.log($("option:selected", this).val());#}
+        if($("option:selected", this).val()==1){
+            $("#rebuildBlock").show();
+        }else{
+            $("#rebuildBlock").hide();
+        }
+    });
+
+    $("#selectReleaseType").change(function () {
+        console.log($("option:selected", this).val());
+        if($("option:selected", this).val()==1){
+            $("#reReleaseBlock").show();
+        }else{
+            $("#reReleaseBlock").hide();
+        }
+    });
+
+    $("#selectSelfTest").change(function () {
+        console.log($("option:selected", this).val());
+        if($("option:selected", this).val()==1){
+            $("#selfTestReasonBlock").show();
+        }else{
+            $("#selfTestReasonBlock").hide();
+        }
+    });
+
+    $("#selectValVerifyResult").change(function () {
+        console.log($("option:selected", this).val());
+        if($("option:selected", this).val()==1){
+            $("#valVerifyResultBlock").show();
+        }else{
+            $("#valVerifyResultBlock").hide();
+        }
+    });
+
+    $("#rebuildBlock").hide();
+    $("#reReleaseBlock").hide();
+    $("#selfTestReasonBlock").hide();
+    $("#valVerifyResultBlock").hide();
     </script>
+
+    <script>
+  $(function () {
+    //Initialize Select2 Elements
+    $(".select2").select2();
+  });
+</script>
 {% endblock %}

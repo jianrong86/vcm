@@ -13,7 +13,9 @@ class Users(models.Model):
 class ReleaseVersion(models.Model):
     status_choice = (('0', 'OPEN'), ('1', 'FINISH'))
     result_choice = (('0', 'PASS'), ('1', 'FAIL'))
-    weekly = models.IntegerField(null=True, blank=True)
+    build_type_choice = (('0', '1st build'), ('1', "Re-build"))
+    release_type_choice = (('0', '1st release'), ('1', "Re-release"))
+    weekly = models.CharField(null=True, blank=True, max_length=10)
     project_name = models.CharField(max_length=20)
     customer_name = models.CharField(max_length=30)
     customer_id = models.CharField(max_length=10)
@@ -34,6 +36,10 @@ class ReleaseVersion(models.Model):
     compiler = models.EmailField(null=True, blank=True)
     verifier = models.EmailField(null=True, blank=True)
     vpm = models.EmailField(null=True, blank=True)
+    build_type  = models.CharField(max_length=20,null=True, blank=True, choices=build_type_choice, default='0')
+    rebuild_reason = models.TextField(null=True, blank=True)
+    release_type = models.CharField(max_length=20,null=True, blank=True, choices=release_type_choice, default='0')
+    re_release_reason = models.TextField(null=True, blank=True)
 
     class Meta:
         # unique_together = ("project_name", "customer_id", "software_version")

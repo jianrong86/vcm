@@ -6,9 +6,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcm.iml" afterPath="$PROJECT_DIR$/.idea/vcm.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.bat" afterPath="$PROJECT_DIR$/start.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/software_create.html" afterPath="$PROJECT_DIR$/templates/software_create.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/software_update.html" afterPath="$PROJECT_DIR$/templates/software_update.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcm/urls.py" afterPath="$PROJECT_DIR$/vcm/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcmapp/models.py" afterPath="$PROJECT_DIR$/vcmapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vcmapp/views.py" afterPath="$PROJECT_DIR$/vcmapp/views.py" />
     </list>
@@ -38,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
+            <state relative-caret-position="286">
+              <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -51,19 +52,21 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vcm/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
+            <state relative-caret-position="511">
               <caret line="27" column="57" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vcmapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="313">
+              <caret line="179" column="55" selection-start-line="179" selection-start-column="55" selection-end-line="179" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#54#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,23 +74,41 @@
       <file leaf-file-name="software_update.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/software_update.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="171" column="66" selection-start-line="171" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="73" column="124" selection-start-line="73" selection-start-column="124" selection-end-line="73" selection-end-column="124" />
               <folding>
-                <element signature="e#524#530#0#HTML" expanded="true" />
-                <element signature="e#867#873#0#HTML" expanded="true" />
-                <element signature="e#1288#1294#0#HTML" expanded="true" />
-                <element signature="e#1603#1609#0#HTML" expanded="true" />
-                <element signature="e#2005#2011#0#HTML" expanded="true" />
-                <element signature="e#3327#3333#0#HTML" expanded="true" />
-                <element signature="e#3730#3736#0#HTML" expanded="true" />
-                <element signature="e#7230#7249#0#HTML" expanded="true" />
-                <element signature="e#8335#8341#0#HTML" expanded="true" />
-                <element signature="e#8347#8353#0#HTML" expanded="true" />
+                <element signature="e#788#794#0#HTML" expanded="true" />
+                <element signature="e#1208#1214#0#HTML" expanded="true" />
+                <element signature="e#1552#1558#0#HTML" expanded="true" />
+                <element signature="e#1941#1947#0#HTML" expanded="true" />
+                <element signature="e#2087#2106#0#HTML" expanded="true" />
+                <element signature="e#2658#2664#0#HTML" expanded="true" />
+                <element signature="e#3026#3032#0#HTML" expanded="true" />
+                <element signature="e#3174#3193#0#HTML" expanded="true" />
+                <element signature="e#3764#3770#0#HTML" expanded="true" />
+                <element signature="e#4141#4147#0#HTML" expanded="true" />
+                <element signature="e#4543#4549#0#HTML" expanded="true" />
+                <element signature="e#5865#5871#0#HTML" expanded="true" />
+                <element signature="e#6265#6271#0#HTML" expanded="true" />
+                <element signature="e#7056#7062#0#HTML" expanded="true" />
+                <element signature="e#7069#7075#0#HTML" expanded="true" />
+                <element signature="e#7464#7470#0#HTML" expanded="true" />
+                <element signature="e#7477#7483#0#HTML" expanded="true" />
+                <element signature="e#7922#7928#0#HTML" expanded="true" />
+                <element signature="e#7933#7939#0#HTML" expanded="true" />
+                <element signature="e#8339#8345#0#HTML" expanded="true" />
+                <element signature="e#8349#8355#0#HTML" expanded="true" />
                 <element signature="e#8715#8734#0#HTML" expanded="true" />
-                <element signature="e#9393#9399#0#HTML" expanded="true" />
-                <element signature="e#9405#9411#0#HTML" expanded="true" />
-                <element signature="e#9415#9421#0#HTML" expanded="true" />
+                <element signature="e#9825#9831#0#HTML" expanded="true" />
+                <element signature="e#9835#9841#0#HTML" expanded="true" />
+                <element signature="e#9845#9851#0#HTML" expanded="true" />
+                <element signature="e#10253#10259#0#HTML" expanded="true" />
+                <element signature="e#10265#10271#0#HTML" expanded="true" />
+                <element signature="e#10633#10652#0#HTML" expanded="true" />
+                <element signature="e#11310#11316#0#HTML" expanded="true" />
+                <element signature="e#11322#11328#0#HTML" expanded="true" />
+                <element signature="e#11332#11338#0#HTML" expanded="true" />
+                <element signature="e#11868#11887#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,11 +117,26 @@
       <file leaf-file-name="software_create.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/software_create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="146" selection-end-column="26" />
+            <state relative-caret-position="283">
+              <caret line="73" column="88" selection-start-line="73" selection-start-column="71" selection-end-line="73" selection-end-column="88" />
               <folding>
-                <element signature="e#6721#6740#0#HTML" expanded="true" />
-                <element signature="e#7850#7869#0#HTML" expanded="true" />
+                <element signature="e#931#937#0#HTML" expanded="true" />
+                <element signature="e#1991#1997#0#HTML" expanded="true" />
+                <element signature="e#2137#2156#0#HTML" expanded="true" />
+                <element signature="e#2649#2655#0#HTML" expanded="true" />
+                <element signature="e#2993#2999#0#HTML" expanded="true" />
+                <element signature="e#3141#3160#0#HTML" expanded="true" />
+                <element signature="e#3668#3674#0#HTML" expanded="true" />
+                <element signature="e#5603#5609#0#HTML" expanded="true" />
+                <element signature="e#5969#5975#0#HTML" expanded="true" />
+                <element signature="e#7123#7129#0#HTML" expanded="true" />
+                <element signature="e#7136#7142#0#HTML" expanded="true" />
+                <element signature="e#7581#7587#0#HTML" expanded="true" />
+                <element signature="e#7592#7598#0#HTML" expanded="true" />
+                <element signature="e#7968#7974#0#HTML" expanded="true" />
+                <element signature="e#7978#7984#0#HTML" expanded="true" />
+                <element signature="e#8117#8136#0#HTML" expanded="true" />
+                <element signature="e#10097#10116#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,8 +145,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vcmapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+            <state relative-caret-position="357">
+              <caret line="41" column="21" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -153,12 +189,12 @@
         <option value="$PROJECT_DIR$/vcmapp/templates/edit_items.html" />
         <option value="$PROJECT_DIR$/vcmapp/templates/new_items.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/vcm/urls.py" />
         <option value="$PROJECT_DIR$/vcmapp/models.py" />
         <option value="$PROJECT_DIR$/templates/software_create.html" />
         <option value="$PROJECT_DIR$/templates/software_update.html" />
         <option value="$PROJECT_DIR$/vcmapp/views.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
       </list>
     </option>
   </component>
@@ -169,10 +205,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1554" />
-    <option name="height" value="916" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -227,80 +263,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vcmapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vcm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="F:/gistandard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -628,10 +604,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1189857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14901665" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -667,14 +643,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vcm/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vcm/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
@@ -702,7 +670,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -743,7 +713,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -846,68 +818,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vcm/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/index_backup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vcmapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/software_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="141" column="7" selection-start-line="141" selection-start-column="7" selection-end-line="146" selection-end-column="26" />
-          <folding>
-            <element signature="e#6721#6740#0#HTML" expanded="true" />
-            <element signature="e#7850#7869#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="43" />
+        <state relative-caret-position="198">
+          <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/software_update.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="171" column="66" selection-start-line="171" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+        <state relative-caret-position="312">
+          <caret line="73" column="124" selection-start-line="73" selection-start-column="124" selection-end-line="73" selection-end-column="124" />
           <folding>
-            <element signature="e#524#530#0#HTML" expanded="true" />
-            <element signature="e#867#873#0#HTML" expanded="true" />
-            <element signature="e#1288#1294#0#HTML" expanded="true" />
-            <element signature="e#1603#1609#0#HTML" expanded="true" />
-            <element signature="e#2005#2011#0#HTML" expanded="true" />
-            <element signature="e#3327#3333#0#HTML" expanded="true" />
-            <element signature="e#3730#3736#0#HTML" expanded="true" />
-            <element signature="e#7230#7249#0#HTML" expanded="true" />
-            <element signature="e#8335#8341#0#HTML" expanded="true" />
-            <element signature="e#8347#8353#0#HTML" expanded="true" />
+            <element signature="e#788#794#0#HTML" expanded="true" />
+            <element signature="e#1208#1214#0#HTML" expanded="true" />
+            <element signature="e#1552#1558#0#HTML" expanded="true" />
+            <element signature="e#1941#1947#0#HTML" expanded="true" />
+            <element signature="e#2087#2106#0#HTML" expanded="true" />
+            <element signature="e#2658#2664#0#HTML" expanded="true" />
+            <element signature="e#3026#3032#0#HTML" expanded="true" />
+            <element signature="e#3174#3193#0#HTML" expanded="true" />
+            <element signature="e#3764#3770#0#HTML" expanded="true" />
+            <element signature="e#4141#4147#0#HTML" expanded="true" />
+            <element signature="e#4543#4549#0#HTML" expanded="true" />
+            <element signature="e#5865#5871#0#HTML" expanded="true" />
+            <element signature="e#6265#6271#0#HTML" expanded="true" />
+            <element signature="e#7056#7062#0#HTML" expanded="true" />
+            <element signature="e#7069#7075#0#HTML" expanded="true" />
+            <element signature="e#7464#7470#0#HTML" expanded="true" />
+            <element signature="e#7477#7483#0#HTML" expanded="true" />
+            <element signature="e#7922#7928#0#HTML" expanded="true" />
+            <element signature="e#7933#7939#0#HTML" expanded="true" />
+            <element signature="e#8339#8345#0#HTML" expanded="true" />
+            <element signature="e#8349#8355#0#HTML" expanded="true" />
             <element signature="e#8715#8734#0#HTML" expanded="true" />
-            <element signature="e#9393#9399#0#HTML" expanded="true" />
-            <element signature="e#9405#9411#0#HTML" expanded="true" />
-            <element signature="e#9415#9421#0#HTML" expanded="true" />
+            <element signature="e#9825#9831#0#HTML" expanded="true" />
+            <element signature="e#9835#9841#0#HTML" expanded="true" />
+            <element signature="e#9845#9851#0#HTML" expanded="true" />
+            <element signature="e#10253#10259#0#HTML" expanded="true" />
+            <element signature="e#10265#10271#0#HTML" expanded="true" />
+            <element signature="e#10633#10652#0#HTML" expanded="true" />
+            <element signature="e#11310#11316#0#HTML" expanded="true" />
+            <element signature="e#11322#11328#0#HTML" expanded="true" />
+            <element signature="e#11332#11338#0#HTML" expanded="true" />
+            <element signature="e#11868#11887#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vcm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="27" column="57" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vcmapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="313">
+          <caret line="179" column="55" selection-start-line="179" selection-start-column="55" selection-end-line="179" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vcmapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="41" column="21" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/software_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="73" column="88" selection-start-line="73" selection-start-column="71" selection-end-line="73" selection-end-column="88" />
+          <folding>
+            <element signature="e#931#937#0#HTML" expanded="true" />
+            <element signature="e#1991#1997#0#HTML" expanded="true" />
+            <element signature="e#2137#2156#0#HTML" expanded="true" />
+            <element signature="e#2649#2655#0#HTML" expanded="true" />
+            <element signature="e#2993#2999#0#HTML" expanded="true" />
+            <element signature="e#3141#3160#0#HTML" expanded="true" />
+            <element signature="e#3668#3674#0#HTML" expanded="true" />
+            <element signature="e#5603#5609#0#HTML" expanded="true" />
+            <element signature="e#5969#5975#0#HTML" expanded="true" />
+            <element signature="e#7123#7129#0#HTML" expanded="true" />
+            <element signature="e#7136#7142#0#HTML" expanded="true" />
+            <element signature="e#7581#7587#0#HTML" expanded="true" />
+            <element signature="e#7592#7598#0#HTML" expanded="true" />
+            <element signature="e#7968#7974#0#HTML" expanded="true" />
+            <element signature="e#7978#7984#0#HTML" expanded="true" />
+            <element signature="e#8117#8136#0#HTML" expanded="true" />
+            <element signature="e#10097#10116#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="130" column="33" selection-start-line="130" selection-start-column="33" selection-end-line="130" selection-end-column="33" />
           <folding />
         </state>
       </provider>

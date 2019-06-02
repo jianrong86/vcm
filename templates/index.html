@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block css %}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'DataTables-1.10.15/media/css/jquery.dataTables.css' %}">#}
+    <link rel="stylesheet" href="{% static 'plugins/select2/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/datatables/jquery.dataTables.min.css' %}">
+{% endblock %}
 {% block content %}
 
     <!-- 导航栏-->
@@ -54,21 +60,24 @@
                     </button>
 {#                </div>#}
 
-                <div class="table-responsive">
-                    <table class="table table-striped">
+{#                <div class="table-responsive">#}
+                <div class="box-doby">
+{#                    <table id="dtbList" class="table table-striped">#}
+                    <table id="dtbList" class="display" cellspacing="0" width="100%">
                         <thead>
-                            <tr>
+                            <tr valign="middle">
 {#                                <th class="col-md-1">ID</th>#}
-                                <th class="col-md-1">Project</th>
-                                <th class="col-md-1">Customer</th>
-                                <th class="col-md-1">Cust_ID</th>
-                                <th class="col-md-1">Firmware</th>
-                                <th class="col-md-1">WEBUI</th>
-                                <th class="col-md-1">Compiler</th>
-{#                                <th class="col-md-1">Software</th>#}
+                                <th>WK</th>
+                                <th>Project</th>
+                                <th>Customer</th>
+{#                                <th>Cust_ID</th>#}
+{#                                <th class="col-md-1">Firmware</th>#}
+{#                                <th class="col-md-1">WEBUI</th>#}
+{#                                <th class="col-md-1">Compiler</th>#}
+                                <th>Software</th>
             {#                    <th class="col-md-1">Path</th>#}
             {#                    <th class="col-md-1">Modification</th>#}
-                                <th class="col-md-1">Release_Date</th>
+                                <th>Release_Date</th>
             {#                    <th class="col-md-1">Actual Release Date</th>#}
             {#                    <th class="col-md-1">Release Delay Reason</th>#}
             {#                    <th class="col-md-1">Self Test Result</th>#}
@@ -76,53 +85,12 @@
             {#                    <th class="col-md-1">VAL_Verify</th>#}
             {#                    <th class="col-md-1">Fail Reason</th>#}
             {#                    <th class="col-md-1">Create_Time</th>#}
-                                <th class="col-md-1">Status</th>
-                                <th class="col-md-1">Operator</th>
+                                <th>Status</th>
+                                <th>Operator</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {% for ver in ver_lists %}
-                            <tr>
-{#                                <td>{{ ver.id }}</td>#}
-                                <td>{{ ver.project_name }}</td>
-                                <td>{{ ver.customer_name }}</td>
-                                <td>{{ ver.customer_id }}</td>
-                                <td>{{ ver.firmware_develop }}</td>
-                                <td>{{ ver.webui_develop }}</td>
-                                <td>{{ ver.compiler }}</td>
-{#                                <td>{{ ver.software_version }}</td>#}
-            {#                    <td>{{ ver.software_path }}</td>#}
-            {#                    <td>{{ ver.modification }}</td>#}
-                                <td>{{ ver.plan_release_date|date:"Y-m-d H:i:s" }}</td>
-            {#                    <td>{{ ver.actual_release_date }}</td>#}
-            {#                    <td>{{ ver.release_delay_reason }}</td>#}
-            {#                    <td>{{ ver.self_test_result }}</td>#}
-            {#                    <td>{{ ver.self_test_fail_reason }}</td>#}
-            {#                    <td>{{ ver.val_verify_result }}</td>#}
-            {#                    <td>{{ ver.val_verify_fail_reason }}</td>#}
-            {#                    <td>{{ ver.create_time }}</td>#}
-                                {% if ver.status.lower == '0' %}
-{#                                    <td style="background-color: yellow">{{ ver.status }}</td>#}
-                                    <td>
-                                    <button class='btn btn-warning btn-xs'>OPEN</button>
-                                    </td>
-                                {% elif ver.status.lower == '1' %}
-{#                                    <td style="background-color: green">{{ ver.status }}</td>#}
-                                    <td>
-                                        <button class='btn btn-success btn-xs'>FINISH</button>
-                                    </td>
-                                {% else %}
-                                    <td>{{ ver.status }}</td>
-                                {% endif %}
-                                <td>
-{#                                    <a href="/edit_items/{{ ver.id }}/"> Edit </a>#}
-                                    <button title='编辑' onclick='doUpdate("{{ ver.id }}")'>
-                                        <i class='glyphicon glyphicon-list-alt'></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
+                    <tbody>
+                    </tbody>
                     </table>
                 </div>
             </div>
@@ -132,37 +100,107 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script type="text/javascript">
-$("#btnSwCreate").click( function () {
-    var div=layer.open({
-{#        0(信息框，默认是0），1（页面层），2（iframe层)，3（加载层），4（tips层）#}
-        type:2,
-        title:"New",
-        shadeClose:false,
-        maxmin:true,
-        area:['800px','580px'],
-        content:"{% url 'software-create' %}",
-        end: function () {
-            window.location.reload();
-        }
-    });
-    layer.full(div)
-});
+    <script src="{% static 'plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'plugins/datatables/dataTables.const.js' %}"></script>
+    <script src="{% static 'plugins/datatables/moment.min.js' %}"></script>
+{#    <script type="text/javascript" charset="utf8" src="{% static 'DataTables-1.10.15/media/js/jquery.js' %}"></script>#}
+{#    <script type="text/javascript" charset="utf8" src="{% static 'DataTables-1.10.15/media/js/jquery.dataTables.js' %}"></script>#}
+    <script src="{% static 'plugins/select2/select2.full.min.js' %}"></script>
 
-    function doUpdate(id) {
+    <script type="text/javascript">
+    var oDataTable=null;
+    $(function () {
+        oDataTable = initTable();
+        function initTable() {
+            var oTable=$('#dtbList').DataTable($.extend(true, {}, DATATABLES_CONSTANT.DATA_TABLES.DEFAULT_OPTION,
+                    {
+                        ajax : {
+                            "url": "{% url 'software-list' %}"
+                        },
+
+                        columns : [
+                            {
+                                data : "weekly"
+                            },
+                            {
+                                data : "project_name"
+                            },
+                            {
+                                data : "customer_name"
+                            },
+{#                            {#}
+{#                                data : "customer_id"#}
+{#                            },#}
+                            {
+                                data : "software_version"
+                            },
+                            {
+                                data : "plan_release_date"
+                            },
+                            {
+                                data : "status",
+                                render : function(data, type, row, meta) {
+                                    if (data==0){
+                                        var ret="<button class='btn btn-warning btn-xs'>OPEN</button>";
+                                        return ret;
+                                    }if (data==1){
+                                        var ret="<button class='btn btn-success btn-xs'>FINISH</button>";
+                                        return ret;
+                                    }
+
+                                }
+                            },
+                            {
+                                data : "id",
+                                render : function(data, type, row, meta) {
+                                    var ret="<button title='Edit' onclick='doUpdate("
+                                            +data+")'> <i class='glyphicon glyphicon-pencil'></i></button>";
+                                    return ret;
+                                }
+                            }
+
+
+                        ],
+
+                    }
+            ));
+            return oTable;
+        }
+
+
+
+    $("#btnSwCreate").click( function () {
         var div=layer.open({
-            type: 2,
-            title: 'edit',
-            shadeClose: false,
-            maxmin: true,
-            area: ['800px', '600px'],
-            content: ["{% url 'software-update' %}" + '?id=' + id],
+    {#        0(信息框，默认是0），1（页面层），2（iframe层)，3（加载层），4（tips层）#}
+            type:2,
+            title:"New",
+            shadeClose:false,
+            maxmin:true,
+            area:['800px','580px'],
+            content:"{% url 'software-create' %}",
             end: function () {
                 window.location.reload();
             }
         });
         layer.full(div)
-    }
+    });
+
+
+    });
+function doUpdate(id) {
+    var div=layer.open({
+        type: 2,
+        title: 'edit',
+        shadeClose: false,
+        maxmin: true,
+        area: ['800px', '600px'],
+        content: ["{% url 'software-update' %}" + '?id=' + id],
+        end: function () {
+            window.location.reload();
+        }
+    });
+    layer.full(div)
+}
 </script>
 {% endblock %}
 
