@@ -94,35 +94,96 @@ def get_month_re_release_count():
         count.append(month_software)
     return count
 
+def get_weekly_sw_count():
+    filters = dict()
+    count = []
+    today = date.today()
+    weekday = calendar.weekday(today.year, today.month, today.day)
+    start_date = today - timedelta(weekday)
+    end_date = start_date + timedelta(1)
+    for day in range(7):
+        filters['actual_release_date__range'] = (start_date, end_date)
+        print(start_date, end_date)
+        day_count = ReleaseVersion.objects.filter(**filters).count()
+        count.append(day_count)
+        start_date = end_date
+        end_date = end_date + timedelta(1)
+    print("day:%s" % count)
+    return count
+
+def get_weekly_sw_rebuild_count():
+    filters = dict()
+    count = []
+    today = date.today()
+    weekday = calendar.weekday(today.year, today.month, today.day)
+    start_date = today - timedelta(weekday)
+    end_date = start_date + timedelta(1)
+    for day in range(7):
+        filters['actual_release_date__range'] = (start_date, end_date)
+        filters['build_type'] = '1'
+        print(start_date, end_date)
+        day_count = ReleaseVersion.objects.filter(**filters).count()
+        count.append(day_count)
+        start_date = end_date
+        end_date = end_date + timedelta(1)
+    print("day:%s" % count)
+    return count
+
+def get_weekly_sw_re_release_count():
+    filters = dict()
+    count = []
+    today = date.today()
+    weekday = calendar.weekday(today.year, today.month, today.day)
+    start_date = today - timedelta(weekday)
+    end_date = start_date + timedelta(1)
+    for day in range(7):
+        filters['actual_release_date__range'] = (start_date, end_date)
+        filters['release_type'] = '1'
+        print(start_date, end_date)
+        day_count = ReleaseVersion.objects.filter(**filters).count()
+        count.append(day_count)
+        start_date = end_date
+        end_date = end_date + timedelta(1)
+    print("day:%s" % count)
+    return count
+
+
 class SoftwareView(View):
     def get(self, request):
         # filters = dict()
+        get_weekly_sw_count()
         software_list = ReleaseVersion.objects.all()
         # export_excel()
         # filters = {
         #     'weekly' : 'WK25'
         # }
-        rebuild_filters = {
-            'weekly': 'WK25',
-            'build_type' : '1',
-        }
-        re_release_filters = {
-            'weekly': 'WK25',
-            'release_type' : '1'
-        }
+        # rebuild_filters = {
+        #     'weekly': 'WK25',
+        #     'build_type' : '1',
+        # }
+        # re_release_filters = {
+        #     'weekly': 'WK25',
+        #     'release_type' : '1'
+        # }
 
-        # weekly_count = ReleaseVersion.objects.filter(weekly='WK25').count()
-        # print(weekly_count)
         month_software_count = get_month_count()
-        rebuild_count = get_month_rebuild_count()
-        # print(rebuild_count)
-        re_release_count = get_month_re_release_count()
-        # print(re_release_count)
+        month_rebuild_count = get_month_rebuild_count()
+        month_re_release_count = get_month_re_release_count()
+        day_software_count = get_weekly_sw_count()
+        day_rebuild_count = get_weekly_sw_rebuild_count()
+        day_re_release_count = get_weekly_sw_re_release_count()
+        print("day_software_count:%s" %day_software_count)
+        print("day_rebuild_count:%s" %day_rebuild_count)
+        print("day_re_release_count:%s" %day_re_release_count)
         ret = {
             "ver_lists": software_list,
             "month_software_count": month_software_count,
-            "rebuild_count": rebuild_count,
-            "re_release_count": re_release_count
+            "month_rebuild_count": month_rebuild_count,
+            "month_re_release_count": month_re_release_count,
+            "day_software_count":day_software_count,
+            "day_rebuild_count":day_rebuild_count,
+            "day_re_release_count":day_re_release_count
+
         }
         return render(request, "index.html", ret)
 

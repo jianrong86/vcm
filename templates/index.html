@@ -64,10 +64,10 @@
                             </div>
                             <div class="box-body">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-6">
                                         <div id="bar_container" style="height: 400px"></div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div id="pie_container" style="height: 400px"></div>
                                     </div>
                                 </div>
@@ -112,7 +112,8 @@
     <script src="{% static 'plugins/datatables/dataTables.const.js' %}"></script>
     <script src="{% static 'plugins/datatables/moment.min.js' %}"></script>
     <script src="{% static 'plugins/select2/select2.full.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'plugins/echarts/echarts.min.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'plugins/echarts/echarts.min.js' %}"></script>#}
+    <script type="text/javascript" src="{% static 'echarts-2.2.7/build/dist/echarts-all.js' %}"></script>
 {#    <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>#}
 
     <script type="text/javascript">
@@ -270,7 +271,7 @@
                 {
                     name: '版本重编',
                     type: 'bar',
-                    data: {{ rebuild_count }},
+                    data: {{ month_rebuild_count }},
                     markPoint: {
                         data:[
                             {type: 'max', name:'max'},
@@ -286,7 +287,7 @@
                 {
                     name: '版本重出',
                     type: 'bar',
-                    data: {{ re_release_count }},
+                    data: {{ month_re_release_count }},
                     markPoint: {
                         data:[
                             {type: 'max', name:'max'},
@@ -305,6 +306,99 @@
 
         if (option && typeof option === "object") {
             myBarChar.setOption(option, true);
+        }
+
+        //weekly
+        var pie_dom = document.getElementById("pie_container");
+        var myPieChart = echarts.init(pie_dom);
+        option = null;
+        option = {
+            title : {
+                text : 'Data',
+                subtext : ''
+            },
+            tooltip : {
+                trigger: 'axis'
+            },
+            legend: {
+                data:["版本总数", "版本重编", "版本重出"]
+            },
+            toolbox: {
+                show : true,
+                feature : {
+                    mark: {show:true},
+                    dataView : {show: true, readOnly: false},
+                    magicType : {show: true, type: ['line', 'bar']},
+                    saveAsImage : {show: true}
+                }
+            },
+            calculable : true,
+            xAxis : [
+                {
+                    type : 'category',
+                    data : ['MON','TUE','WED','THU','FRI','SAT','SUN']
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name: '版本总数',
+                    type: 'line',
+                    data: {{ day_software_count }},
+                    markPoint: {
+                        data:[
+                            {type: 'max', name:'max'},
+                            {type: 'min', name:'min'}
+                        ]
+                    },
+                    markLine: {
+                        data: [
+                            {type: 'average', name:'average'}
+                        ]
+                    },
+                },
+                {
+                    name: '版本重编',
+                    type: 'line',
+                    data: {{ day_rebuild_count }},
+                    markPoint: {
+                        data:[
+                            {type: 'max', name:'max'},
+                            {type: 'min', name:'min'}
+                        ]
+                    },
+                    markLine: {
+                        data: [
+                            {type: 'average', name:'average'}
+                        ]
+                    }
+                },
+                {
+                    name: '版本重出',
+                    type: 'line',
+                    data: {{ day_re_release_count }},
+                    markPoint: {
+                        data:[
+                            {type: 'max', name:'max'},
+                            {type: 'min', name:'min'}
+                        ]
+                    },
+                    markLine: {
+                        data: [
+                            {type: 'average', name:'average'}
+                        ]
+                    }
+                }
+            ]
+
+        };
+
+        if (option && typeof option === "object") {
+            myPieChart.setOption(option, true);
         }
 
 
