@@ -108,7 +108,6 @@ def get_weekly_sw_count():
         count.append(day_count)
         start_date = end_date
         end_date = end_date + timedelta(1)
-    print("day:%s" % count)
     return count
 
 def get_weekly_sw_rebuild_count():
@@ -121,12 +120,10 @@ def get_weekly_sw_rebuild_count():
     for day in range(7):
         filters['actual_release_date__range'] = (start_date, end_date)
         filters['build_type'] = '1'
-        print(start_date, end_date)
         day_count = ReleaseVersion.objects.filter(**filters).count()
         count.append(day_count)
         start_date = end_date
         end_date = end_date + timedelta(1)
-    print("day:%s" % count)
     return count
 
 def get_weekly_sw_re_release_count():
@@ -139,19 +136,60 @@ def get_weekly_sw_re_release_count():
     for day in range(7):
         filters['actual_release_date__range'] = (start_date, end_date)
         filters['release_type'] = '1'
-        print(start_date, end_date)
         day_count = ReleaseVersion.objects.filter(**filters).count()
         count.append(day_count)
         start_date = end_date
         end_date = end_date + timedelta(1)
-    print("day:%s" % count)
     return count
 
+from openpyxl import load_workbook
+def import_excel():
+    items = dict()
+    wb = load_workbook("E:\\Version Control.xlsx")
+    sheet = wb.get_sheet_by_name("版本管理")
+
+    for row in range(2, sheet.max_row + 1):
+
+        items['project_name'] = sheet.cell(row=row, column=2).value
+        items['customer_name'] = sheet.cell(row=row, column=3).value
+        items['customer_id'] = sheet.cell(row=row, column=4).value
+        items['firmware_develop'] = sheet.cell(row=row, column=7).value
+        items['webui_develop'] = sheet.cell(row=row, column=8).value
+        items['software_version'] = sheet.cell(row=row, column=9).value
+        items['software_path'] = sheet.cell(row=row, column=17).value
+        items['modification'] = sheet.cell(row=row, column=10).value
+        items['plan_release_date'] = "%s 18:00:00" % str(sheet.cell(row=row, column=11).value).replace('.', '-')
+        items['actual_release_date'] = "%s 18:00:00" % str(sheet.cell(row=row, column=12).value).replace('.', '-')
+        items['release_delay_reason'] = sheet.cell(row=row, column=13).value
+        if sheet.cell(row=row, column=14).value == 'PASS':
+            items['self_test_result'] = '0'
+        elif sheet.cell(row=row, column=14).value == 'FAIL':
+            items['self_test_result'] = '1'
+        else:
+            items['self_test_result'] = '2'
+        items['self_test_fail_reason'] = sheet.cell(row=row, column=15).value
+        items['status'] = '1'
+        items['weekly'] = sheet.cell(row=row, column=1).value
+
+        if sheet.cell(row=row, column=16).value == 'NO':
+            items['build_type'] = '0'
+        else:
+            items['build_type'] = '1'
+
+        if sheet.cell(row=row, column=5).value == 'NO':
+            items['release_type'] = '0'
+        else:
+            items['release_type'] = '1'
+        items['re_release_reason'] = sheet.cell(row=row, column=6).value
+        print(items)
+        ReleaseVersion.objects.create(**items)
+        # break
 
 class SoftwareView(View):
     def get(self, request):
         # filters = dict()
-        get_weekly_sw_count()
+        # get_weekly_sw_count()
+        # import_excel()
         software_list = ReleaseVersion.objects.all()
         # export_excel()
         # filters = {
@@ -172,9 +210,6 @@ class SoftwareView(View):
         day_software_count = get_weekly_sw_count()
         day_rebuild_count = get_weekly_sw_rebuild_count()
         day_re_release_count = get_weekly_sw_re_release_count()
-        print("day_software_count:%s" %day_software_count)
-        print("day_rebuild_count:%s" %day_rebuild_count)
-        print("day_re_release_count:%s" %day_re_release_count)
         ret = {
             "ver_lists": software_list,
             "month_software_count": month_software_count,
@@ -189,7 +224,6 @@ class SoftwareView(View):
 
 class SoftwareList(View):
     def get(self, request):
-        print("software list")
         fields = ['id', 'weekly','project_name', 'customer_name', 'customer_id', 'software_version',
                   'build_type', 'release_type', 'plan_release_date', 'status']
         filters = dict()
@@ -236,6 +270,8 @@ class SoftwareCreate(View):
         ret = dict()
         if request.is_ajax():
             plan_date = request.POST.get('plan_release_date')
+            print("plan_date")
+            print(plan_date)
             if not plan_date:
                 plan_date = None
 
