@@ -187,6 +187,8 @@
                                 render : function(data, type, row, meta) {
                                     var ret="<button title='Edit' onclick='doUpdate("
                                             +data+")'> <i class='glyphicon glyphicon-pencil'></i></button>";
+                                    ret=ret+"<button title='Delete' onclick='doDelete("
+                                            +data+")'> <i class='glyphicon glyphicon-trash'></i></button>";
                                     return ret;
                                 }
                             }
@@ -417,6 +419,36 @@ function doUpdate(id) {
     });
     layer.full(div)
 }
+
+function doDelete(id){
+    layer.alert('Delete？', {
+        title:'Tips'
+        ,icon: 3 //0:感叹号 1：对号 2：差号 3：问号 4：小锁 5：哭脸 6：笑脸
+        ,time: 0 //不自动关闭
+        ,btn: ['YES', 'NO']
+        ,yes: function(index){
+            layer.close(index);
+            $.ajax({
+                type: "POST",
+                url : "{% url 'software-delete' %}",
+                data : {"id":id},  //防止post数据时报 csrf_token 403
+                cache: false,
+                success : function(msg) {
+                    if (msg.status == 'success'){
+                        layer.alert('success',{icon: 1});
+                        window.location.reload();
+{#                        oDataTable.ajax.reload();#}
+                    }else{
+                        //alert(msg.message);
+                        layer.alert(msg.status, {icon: 4});
+                    }
+                    return ;
+                }
+            });
+        }
+    });
+}
+
 </script>
 {% endblock %}
 

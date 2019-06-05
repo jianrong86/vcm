@@ -222,6 +222,21 @@ class SoftwareView(View):
         }
         return render(request, "index.html", ret)
 
+class SoftwareDelete(View):
+    def post(self, request):
+        ret = dict(status='success')
+        try:
+            del_id = request.POST['id']
+            print("id:" + del_id)
+            ReleaseVersion.objects.get(id=del_id).delete()
+        except BaseException as e:
+            print("e:"+ str(e))
+            ret['status'] = str(e)
+        return HttpResponse(json.dumps(ret), content_type='application/json')
+
+
+
+
 class SoftwareList(View):
     def get(self, request):
         fields = ['id', 'weekly','project_name', 'customer_name', 'customer_id', 'software_version',

@@ -27,6 +27,8 @@ urlpatterns = [
     url(r'^software_create', views.SoftwareCreate.as_view(), name="software-create"),
     url(r'^software_update', views.SoftwareUpdate.as_view(), name="software-update"),
     url(r'^software_list', views.SoftwareList.as_view(), name="software-list"),
+    url(r'^software_delete', views.SoftwareDelete.as_view(), name="software-delete"),
+
     # url(r'^edit_items/(?P<id>[0-9]+)/$', views.edit_items),
     # url(r'^edit_items_save/(?P<id>[0-9]+)/$', views.update_items),
 
