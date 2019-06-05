@@ -268,7 +268,8 @@ class SoftwareCreate(View):
     # @csrf_exempt
     def post(self,request):
         ret = dict()
-        if request.is_ajax():
+        # if request.is_ajax():
+        try:
             plan_date = request.POST.get('plan_release_date')
             print("plan_date")
             print(plan_date)
@@ -307,8 +308,8 @@ class SoftwareCreate(View):
                 re_release_reason=request.POST.get('re_release_reason')
             )
             ret['status'] = "success"
-        else:
-            ret['status'] = "fail"
+        except BaseException as e:
+            ret['status'] = str(e)
         print(ret)
         return HttpResponse(json.dumps(ret), content_type='application/json')
 
