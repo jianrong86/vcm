@@ -133,14 +133,14 @@
                     <div>
                         <label class="col-sm-2 control-label">Plan&nbsp;Release&nbsp;Date:</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control pull-right form_datetime" name="plan_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
+                            <input type="text" class="form-control pull-right form_datetime" name="plan_release_date" autocomplete="off" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
                         </div>
                     </div>
 
                     <div>
                         <label class="col-sm-2 control-label">Actual&nbsp;Release&nbsp;Date:</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control pull-right form_datetime" name="actual_release_date" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
+                            <input type="text" class="form-control pull-right form_datetime" name="actual_release_date" autocomplete="off" value="{{ ver.plan_release_date |date:'Y-m-d H:m:s'}}"/>
                         </div>
                     </div>
                 </div>

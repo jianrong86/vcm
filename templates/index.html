@@ -427,7 +427,7 @@ function doDelete(id){
         ,time: 0 //不自动关闭
         ,btn: ['YES', 'NO']
         ,yes: function(index){
-            layer.close(index);
+{#            layer.close(index);#}
             $.ajax({
                 type: "POST",
                 url : "{% url 'software-delete' %}",
