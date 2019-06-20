@@ -14,7 +14,7 @@ class ReleaseVersion(models.Model):
     status_choice = (('0', 'OPEN'), ('1', 'FINISH'))
     result_choice = (('0', 'PASS'), ('1', 'FAIL'))
     build_type_choice = (('0', '1st build'), ('1', "Re-build"))
-    release_type_choice = (('0', '1st release'), ('1', "Re-release"))
+    release_type_choice = (('0', '1st release'), ('1', "Re-release"), ('2', "Daily-release"))
     weekly = models.CharField(null=True, blank=True, max_length=10)
     project_name = models.CharField(max_length=20)
     customer_name = models.CharField(max_length=30)

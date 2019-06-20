@@ -369,6 +369,16 @@ class SoftwareUpdate(View):
         if not ver:
             res['status'] = 'fail'
 
+        plan_date = request.POST.get('plan_release_date')
+        print("plan_date")
+        print(plan_date)
+        if not plan_date:
+            plan_date = None
+
+        actual_date = request.POST.get('actual_release_date')
+        if not actual_date:
+            actual_date = None
+
         try:
             ver.project_name = request.POST.get('project_name')
             ver.customer_name = request.POST.get('customer_name')
@@ -378,8 +388,8 @@ class SoftwareUpdate(View):
             ver.software_version = request.POST.get('software_version')
             ver.software_path = request.POST.get('software_path')
             ver.modification = request.POST.get('modification')
-            ver.plan_release_date = request.POST.get('plan_release_date')
-            ver.actual_release_date = request.POST.get('actual_release_date')
+            ver.plan_release_date = plan_date
+            ver.actual_release_date = actual_date
             ver.release_delay_reason = request.POST.get('release_delay_reason')
             ver.self_test_result = request.POST.get('self_test_result')
             ver.self_test_fail_reason = request.POST.get('self_test_fail_reason')
