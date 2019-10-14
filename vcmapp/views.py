@@ -294,35 +294,42 @@ class SoftwareCreate(View):
             actual_date = request.POST.get('actual_release_date')
             if not actual_date:
                 actual_date = None
-
-            ReleaseVersion.objects.create(
-                project_name=request.POST.get('project_name'),
-                customer_name=request.POST.get('customer_name'),
-                customer_id=request.POST.get('customer_id'),
-                firmware_develop=request.POST.get('firmware_develop'),
-                webui_develop=request.POST.get('webui_develop'),
-                software_version=request.POST.get('software_version'),
-                software_path=request.POST.get('software_path'),
-                modification=request.POST.get('modification'),
-                plan_release_date=plan_date,
-                actual_release_date=actual_date,
-                release_delay_reason=request.POST.get('release_delay_reason'),
-                self_test_result=request.POST.get('self_test_result'),
-                self_test_fail_reason=request.POST.get('self_test_fail_reason'),
-                val_verify_result=request.POST.get('val_verify_result'),
-                val_verify_fail_reason=request.POST.get('val_verify_fail_reason'),
-                create_time=request.POST.get('create_time'),
-                status=request.POST.get('status'),
-                compiler=request.POST.get('compiler'),
-                verifier=request.POST.get('verifier'),
-                vpm=request.POST.get('vpm'),
-                weekly=request.POST.get('weekly'),
-                build_type=request.POST.get('build_type'),
-                rebuild_reason=request.POST.get('rebuild_reason'),
-                release_type=request.POST.get('release_type'),
-                re_release_reason=request.POST.get('re_release_reason')
-            )
-            ret['status'] = "success"
+            sw_form_post = request.POST.get('software_version')
+            try:
+                get_ret = list(ReleaseVersion.objects.filter(software_version=sw_form_post))
+            except BaseException as e:
+                print("get_ret:%s" % e)
+            if (get_ret.__len__() == 0):   
+                ReleaseVersion.objects.create(
+                    project_name=request.POST.get('project_name'),
+                    customer_name=request.POST.get('customer_name'),
+                    customer_id=request.POST.get('customer_id'),
+                    firmware_develop=request.POST.get('firmware_develop'),
+                    webui_develop=request.POST.get('webui_develop'),
+                    software_version=request.POST.get('software_version'),
+                    software_path=request.POST.get('software_path'),
+                    modification=request.POST.get('modification'),
+                    plan_release_date=plan_date,
+                    actual_release_date=actual_date,
+                    release_delay_reason=request.POST.get('release_delay_reason'),
+                    self_test_result=request.POST.get('self_test_result'),
+                    self_test_fail_reason=request.POST.get('self_test_fail_reason'),
+                    val_verify_result=request.POST.get('val_verify_result'),
+                    val_verify_fail_reason=request.POST.get('val_verify_fail_reason'),
+                    create_time=request.POST.get('create_time'),
+                    status=request.POST.get('status'),
+                    compiler=request.POST.get('compiler'),
+                    verifier=request.POST.get('verifier'),
+                    vpm=request.POST.get('vpm'),
+                    weekly=request.POST.get('weekly'),
+                    build_type=request.POST.get('build_type'),
+                    rebuild_reason=request.POST.get('rebuild_reason'),
+                    release_type=request.POST.get('release_type'),
+                    re_release_reason=request.POST.get('re_release_reason')
+                )
+                ret['status'] = "success"
+            else:
+                ret['status'] = "fail"
         except BaseException as e:
             ret['status'] = str(e)
         print(ret)
