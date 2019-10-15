@@ -240,7 +240,7 @@ class SoftwareDelete(View):
 class SoftwareList(View):
     def get(self, request):
         fields = ['id', 'weekly','project_name', 'customer_name', 'customer_id', 'software_version',
-                  'build_type', 'release_type', 'actual_release_date', 'status']
+                  'build_type', 'release_type', 'actual_release_date', 'status','compiler']
         filters = dict()
         ret = dict(data=list(ReleaseVersion.objects.filter(**filters).values(*fields).order_by('-id')))
         return HttpResponse(json.dumps(ret, cls=DjangoJSONEncoder), content_type='application/json')
